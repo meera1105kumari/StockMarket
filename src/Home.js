@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Login from './login'; // Import the Login component
 
 const Home = () => {
+  const [showLogin, setShowLogin] = useState(false);
+
+  const toggleLogin = () => {
+    setShowLogin((prevShowLogin) => !prevShowLogin);
+  };
+
   return (
     <div>
-      <h1>Welcome to the Stock Market Dashboard</h1>
-      {/* Add links to login or register */}
+      <h2>Home</h2>
+      <p>This is the home page content.</p>
+      <Link to="/login">Go to Login</Link>
+      <hr />
+      {/* <button onClick={toggleLogin}>
+        {showLogin ? 'Hide Login' : 'Show Login'}
+      </button>
+      {showLogin && <Login />} */}
     </div>
   );
 };

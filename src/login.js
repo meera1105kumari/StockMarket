@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('user'); // Set default username to 'user'
+  const [password, setPassword] = useState('user'); // Set default password to 'user'
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Simulate successful login
-    // In a real application, you would perform authentication here
-    if (username === 'user' && password === 'password') {
+    // Simulate authentication logic
+    if (username === 'user' && password === 'user') {
       // Redirect to the dashboard after successful login
       navigate('/dashboard');
     } else {
+      // Display an error message or perform other actions for failed login
       alert('Invalid username or password');
     }
   };
